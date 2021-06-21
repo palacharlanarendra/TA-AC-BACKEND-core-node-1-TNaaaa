@@ -14,11 +14,8 @@ fs.readFile('./content.md', (err, file) => {
 2. Run sync code from fs module in the above file(`index.js`).
 
 ```js
-console.log('execute me first');
-console.time('task1');
-for (let i = 0; i < 100000000; i++) {}
-console.timeEnd('task1');
-console.log('execute me last');
+let result = fs.readFileSync('./content.md', 'utf8');
+console.log(result);
 ```
 
 3. Run async code from fs module in same file.
@@ -32,7 +29,7 @@ setTimeout(() => {
 }, 1000);
 
 console.time('task2');
-fs.readFile('./content.md', (err, file) => {
+fs.readFile('./content.md', 'utf8', (err, file) => {
   console.log(err, file.toString());
   console.timeEnd('task2');
 });
