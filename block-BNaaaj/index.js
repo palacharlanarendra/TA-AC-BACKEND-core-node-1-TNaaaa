@@ -3,7 +3,7 @@ console.log('Welcome to Nodejs');
 let os = require('os');
 let fs = require('fs');
 
-console.log(os.cpus());
+console.log(os.cpus().length);
 console.log(os.freemem());
 console.log(os.uptime());
 console.log(os.version());
