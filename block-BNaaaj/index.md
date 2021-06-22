@@ -23,25 +23,24 @@ buff1.write("Hello all");
 console.log(buff1.toString());
 
 
-let buff1 = Buffer.allocUnsafe(12);
-buff1.write("Hello all");
+let buff2 = Buffer.allocUnsafe(12);
+buff2.write("Hello all buff2");
 
-console.log(buff1.toString());
+console.log(buff2.toString());
 ```
 Q. Write code example to demonstrate blocking and non-blocking code.
 ```js
-console.log('execute me first');
-console.time('task1'); for (let i = 0; i < 100000000; i++) {} 
-console.timeEnd('task1'); 
-console.log('execute me last');
+var fs = require('fs');
+var sync  = fs.readFileSync('./app.js');
+console.log(sync);
 ```
 ```js
-console.log('execute me at first');
+var fs = require('fs');
+fs.readFile ("content.js",(err,content)=>{
 
-console.time('task1'); 
-setTimeout(() => { console.timeEnd('task1'); }, 1000);
+    console.log(content.toString(),err);
+})
 
-console.log('execute me at last');
 ```
 #### http protocol
 
