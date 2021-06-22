@@ -8,10 +8,9 @@ let http = require('http');
 let server = http.createServer(handleRequest);
 
 function handleRequest(req, res) {
-  console.log(req.method);
-  res.end('Welcome wow');
+  res.end('Welcome');
 }
 
-server.listen(3000, 'localhost', () => {
-  console.log('3000 port got intialized');
+server.listen(4000, 'localhost', () => {
+  console.log('server is listening on 4000 port');
 });
